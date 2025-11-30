@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChinaCommerce — Inicio</title>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="chinacolores.css" />
+
+  <style>
+    /* ===== Estructura general ===== */
+    body {
+      background-color: #fff5f5;
+      color: #111;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== Contenedor principal ===== */
+    .main-container {
+      display: grid;
+      grid-template-columns: 250px 1fr 300px;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    /* ===== Índice lateral izquierdo ===== */
+    .sidebar {
+      background: #b30000;
+      color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .sidebar h3 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #FFD700;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #FFD700;
+      text-decoration: underline;
+    }
+
+    /* ===== Contenido central ===== */
+    .main-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .main-content h1 {
+      color: #b30000;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .main-content p {
+      line-height: 1.8;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    .highlight {
+      color: #b30000;
+      font-weight: 600;
+    }
+
+    /* ===== Noticias recientes ===== */
+    .news-panel {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .news-panel h3 {
+      color: #b30000;
+      border-bottom: 2px solid #FFD700;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .news-item {
+      margin-bottom: 15px;
+    }
+
+    .news-item h4 {
+      color: #b30000;
+      font-size: 1rem;
+      margin: 0 0 5px 0;
+    }
+
+    .news-item p {
+      font-size: 0.9rem;
+      color: #333;
+      margin: 0 0 8px 0;
+    }
+
+    .news-item a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .news-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Responsivo ===== */
+    @media (max-width: 992px) {
+      .main-container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar, .news-panel {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar principal -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">ChinaCommerce</div>
+      <ul class="navbar-links">
+        <li><a href="index.html" class="nav-link active">Inicio</a></li>
+        <li><a href="explorar.html" class="nav-link">Explorar China</a></li>
+        <li class="dropdown">
+          <a href="comercio.html" class="nav-link">Comercio Exterior ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="aduanas.html">Aduanas</a></li>
+            <li><a href="beneficios.html">Beneficios</a></li>
+            <li><a href="intermediarios.html">Intermediarios</a></li>
+            <li><a href="contrato-compraventa.html">Contrato Compraventa</a></li>
+            <li><a href="estrategia.html">Estrategia Exportadora</a></li>
+            <li><a href="proceso.html">El Proceso de Exportar</a></li>
+            <li><a href="pagos.html">Formas de Pago Internacionales</a></li>
+            <li><a href="transporte.html">Transporte Internacional</a></li>
+            <li><a href="seguro.html">Seguro de Transporte Internacional</a></li>
+          </ul>
+        </li>
+        <li><a href="consumidor.html" class="nav-link">El Consumidor Chino</a></li>
+
+        <!-- NUEVO BOTÓN BLOG -->
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+
+        <li><a href="login.html" class="nav-link">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenedor principal -->
+  <div class="main-container">
+    <aside></aside>
+
+    <!-- Contenido central -->
+    <section class="main-content">
+      <h1>Bienvenido a ChinaCommerce</h1>
+      <p>
+        <strong class="highlight">ChinaCommerce</strong> es una plataforma diseñada para fortalecer el conocimiento sobre el mercado chino y las oportunidades de comercio exterior entre <strong>Chile y China</strong>. Aquí encontrarás información actualizada sobre las principales industrias, las políticas comerciales, la cultura empresarial y las tendencias que definen la economía del país asiático.
+      </p>
+      <p>
+        En nuestra sección <span class="highlight">“Explorar China”</span> descubrirás artículos temáticos que te ayudarán a comprender la <strong>estructura económica, tecnológica y cultural</strong> del país. Además, podrás acceder a materiales educativos sobre <span class="highlight">exportaciones, aduanas y estrategias comerciales</span>.
+      </p>
+      <p>
+        En el panel derecho te mantenemos informado con <strong>noticias recientes</strong> sobre China y sus vínculos con América Latina, con foco en las oportunidades para los emprendedores y empresas chilenas.
+      </p>
+    </section>
+
+    <!-- Panel de noticias -->
+    <aside class="news-panel">
+      <h3>Noticias Recientes</h3>
+
+      <div class="news-item">
+        <h4>China impulsa nuevas políticas de importación</h4>
+        <p>El gobierno chino anunció medidas para facilitar la entrada de productos agrícolas latinoamericanos.</p>
+        <a href="#">Leer más →</a>
+      </div>
+
+      <div class="news-item">
+        <h4>Chile refuerza su presencia en la Expo de Shanghái</h4>
+        <p>Empresas chilenas destacan en la exposición internacional, promoviendo frutas y vinos.</p>
+        <a href="#">Leer más →</a>
+      </div>
+
+      <div class="news-item">
+        <h4>Inversiones tecnológicas en el sur de China</h4>
+        <p>Shenzhen continúa expandiendo su liderazgo en innovación y desarrollo de inteligencia artificial.</p>
+        <a href="#">Leer más →</a>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+/* =========================
+   chinacommerce.css
+   ========================= */
+
+/* Fuente general y estilo base */
+:root{
+  --primary: #800020;
+  --gold: #FFD700;
+  --gold-dark: #b8860b;
+  --bg: #f5f5f5;
+  --card-bg: #fff;
+  --text: #333;
+  --maxw: 1200px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+/* -------------------------
+   Navbar principal
+   ------------------------- */
+.navbar {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar-links li { white-space: nowrap; position: relative; }
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.navbar a:hover {
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  color: #fff;
+}
+
+.navbar a.active {
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  color: #fff;
+}
+
+/* -------------------------
+   Dropdown (Comercio Exterior)
+   ------------------------- */
+.dropdown { position: relative; }
+
+/* Menu oculto por defecto */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: var(--primary);
+  border-radius: 8px;
+  min-width: 240px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  z-index: 200;
+}
+
+/* Items del dropdown */
+.dropdown-menu li { margin: 0; padding: 0; }
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.22s;
+  border-radius: 6px;
+  margin: 4px 8px;
+}
+
+.dropdown-menu li a:hover {
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  color: #fff;
+}
+
+/* Mostrar el menú al hover (desktop) */
+.dropdown:hover .dropdown-menu { display: block; }
+
+/* -------------------------
+   Hero principal
+   ------------------------- */
+.hero {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  max-width: 720px;
+  margin: 0 auto 18px auto;
+}
+
+.hero button {
+  padding: 10px 25px;
+  background: var(--gold);
+  color: var(--primary);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.hero button:hover { background: var(--gold-dark); color: #fff; }
+
+/* -------------------------
+   Secciones generales
+   ------------------------- */
+section {
+  background: var(--card-bg);
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 20px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+section h2 {
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+section ul { padding-left: 20px; }
+
+/* Subsections (comercio / consumidor) */
+.subsection { background: var(--card-bg); padding: 25px 20px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); margin-bottom: 30px; }
+
+/* Imágenes */
+.section-image img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px; }
+
+/* Footer */
+.footer {
+  max-width: var(--maxw);
+  margin: 20px auto;
+  padding: 12px 20px;
+  text-align: center;
+  color: #666;
+}
+
+/* -------------------------
+   Responsivo
+   ------------------------- */
+@media screen and (max-width: 1000px) {
+  .navbar-links { flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+  .hero h1 { font-size: 2rem; }
+  section { padding: 20px 15px; }
+}
+
+/* Ajustes específicos para pantallas pequeñas:
+   - El dropdown se comporta como bloque normal */
+@media screen and (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    min-width: 100%;
+    display: none; /* se mostrará con JS si se quiere activar en móvil */
+  }
+  /* si prefieres que esté siempre visible en móvil, usa: display:block; */
+}
+
+/* Pequeño helper para que los enlaces de navbar se vean en móviles */
+@media screen and (max-width: 480px) {
+  .navbar-logo { font-size: 1.2rem; }
+  .navbar a { padding: 8px 10px; font-size: 0.95rem; }
+  .dropdown-menu li a { padding: 10px 12px; }
+}
+
+/* ===== Dropdown (menú desplegable) ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #800020;
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  min-width: 240px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  white-space: nowrap;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+  background: linear-gradient(90deg, #FFD700, #b8860b);
+  color: #fff;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* --- HERO --- */
+.login-hero {
+  background: linear-gradient(135deg, #c0392b, #8e44ad);
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+/* === Solo los títulos específicos del login === */
+.login-section > h2,
+.plans-section > h2 {
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+/* Forzar color blanco solo en ambos títulos */
+.login-box h2,
+.plans-section > h2 {
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}

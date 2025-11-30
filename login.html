@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChinaCommerce — Iniciar Sesión</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="chinacolores.css?v=2">
+
+  <style>
+  /* ===== Dark Pro Mode ===== */
+  body {
+    background: radial-gradient(circle at top, #0d0d0d 0%, #1a1a1a 100%);
+    color: #f5f5f5;
+    transition: background 1.2s ease, color 1.2s ease;
+  }
+
+  /* ===== Navbar ===== */
+  .navbar {
+    background: #111;
+    box-shadow: 0 0 25px rgba(255,255,255,0.25);
+  }
+  .navbar a {
+    color: #f5f5f5;
+  }
+  .navbar a:hover,
+  .navbar a.active {
+    background: linear-gradient(90deg, #fff, #ccc);
+    color: #000;
+  }
+  .navbar-logo {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+  }
+
+  /* ===== Dropdown blanco con texto negro ===== */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: #ffffff;
+    border-radius: 8px;
+    min-width: 240px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    z-index: 200;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px 16px;
+    color: #111;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s;
+    border-radius: 6px;
+    margin: 4px 8px;
+  }
+
+  .dropdown-menu li a:hover {
+    background: #f2f2f2;
+    color: #000;
+  }
+
+  /* ===== Login Section ===== */
+  .login-section {
+    max-width: 1000px;
+    margin: 60px auto 20px auto;
+    text-align: center;
+  }
+  .login-box {
+    background: rgba(20, 20, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+  }
+  .login-box h2 {
+    color: #ffffff !important; /* Forzamos blanco */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+  }
+  .login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+  }
+  .login-box input:focus {
+    background: rgba(255,255,255,0.15);
+  }
+  .login-box button {
+    background: linear-gradient(90deg, #fff, #ccc);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+  }
+  .login-box button:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.03);
+  }
+
+  /* ===== Subscription Section ===== */
+  .plans-section {
+    max-width: 1100px;
+    margin: 40px auto 60px auto;
+    text-align: center;
+  }
+  .plans-section h2 {
+    color: #ffffff !important; /* Forzamos blanco */
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+  }
+  .plans-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  .plan-card {
+    background: rgba(25,25,25,0.85);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 15px;
+    width: 320px;
+    padding: 35px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+  }
+  .plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 35px rgba(255,255,255,0.25);
+  }
+  .plan-card h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .plan-card p.price {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #fff;
+  }
+  .plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+  }
+  .plan-card ul li {
+    margin: 8px 0;
+    color: #ccc;
+  }
+  .plan-card button {
+    margin-top: 15px;
+    background: linear-gradient(90deg, #fff, #ccc);
+    color: #000;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .plan-card button:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.03);
+  }
+
+  /* ===== Corrección fondo blanco general ===== */
+  section,
+  .subsection,
+  .login-section,
+  .plans-section {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">ChinaCommerce</div>
+      <ul class="navbar-links">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="explorar.html" class="nav-link">Explorar China</a></li>
+
+        <li class="dropdown" id="dropdownMenu">
+          <a href="#" class="nav-link">Comercio Exterior ▾</a>
+          <ul class="dropdown-menu" id="menuList">
+            <li><a href="aduanas.html">Aduanas</a></li>
+            <li><a href="beneficios.html">Beneficios</a></li>
+            <li><a href="intermediarios.html">Intermediarios</a></li>
+            <li><a href="contrato-compraventa.html">Contrato Compraventa</a></li>
+            <li><a href="estrategia.html">Estrategia Exportadora</a></li>
+            <li><a href="proceso.html">El Proceso de Exportar</a></li>
+            <li><a href="pagos.html">Formas de Pago Internacionales</a></li>
+            <li><a href="transporte.html">Transporte Internacional</a></li>
+            <li><a href="seguro.html">Seguro de Transporte Internacional</a></li>
+          </ul>
+        </li>
+
+        <li><a href="consumidor.html" class="nav-link">El Consumidor Chino</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="login.html" class="nav-link active">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sección de Inicio de Sesión -->
+  <section class="login-section">
+    <div class="login-box">
+      <h2>Iniciar Sesión</h2>
+      <form>
+        <input type="email" placeholder="Correo electrónico" required />
+        <input type="password" placeholder="Contraseña" required />
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Sección de Planes -->
+  <section class="plans-section">
+    <h2>Elige tu Plan de Suscripción</h2>
+    <div class="plans-container">
+      <div class="plan-card">
+        <h3>Plan Básico</h3>
+        <p class="price">$4.99/mes</p>
+        <ul>
+          <li>Acceso a artículos públicos</li>
+          <li>Boletín mensual</li>
+          <li>Soporte por correo</li>
+        </ul>
+        <button>Suscribirse</button>
+      </div>
+
+      <div class="plan-card">
+        <h3>Plan Profesional</h3>
+        <p class="price">$9.99/mes</p>
+        <ul>
+          <li>Todo del plan básico</li>
+          <li>Acceso a informes exclusivos</li>
+          <li>Recursos descargables</li>
+        </ul>
+        <button>Suscribirse</button>
+      </div>
+
+      <div class="plan-card">
+        <h3>Plan Premium</h3>
+        <p class="price">$19.99/mes</p>
+        <ul>
+          <li>Todo del plan profesional</li>
+          <li>Consultoría personalizada</li>
+          <li>Actualizaciones prioritarias</li>
+        </ul>
+        <button>Suscribirse</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS para mejorar el hover del menú -->
+  <script>
+    const dropdown = document.getElementById("dropdownMenu");
+    const menu = document.getElementById("menuList");
+    let timeoutId;
+
+    dropdown.addEventListener("mouseenter", () => {
+      clearTimeout(timeoutId);
+      menu.style.display = "block";
+    });
+
+    dropdown.addEventListener("mouseleave", () => {
+      timeoutId = setTimeout(() => {
+        menu.style.display = "none";
+      }, 250); // pequeña demora de 250ms
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+

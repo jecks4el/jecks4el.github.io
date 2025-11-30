@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChinaCommerce — Blog</title>
+  <link rel="stylesheet" href="chinacolores.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #fff5f5;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== Contenedor tipo grid ===== */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      max-width: 1300px;
+      margin: 40px auto;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* ===== Contenido principal ===== */
+    .blog-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      color: #b30000;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .comment {
+      background: #fff;
+      border-left: 4px solid #b30000;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .comment-user {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    .comment-date {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .comment-text {
+      font-size: 1rem;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .reply-button {
+      margin-top: 10px;
+      background: #b30000;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .reply-button:hover {
+      background: #8a0000;
+    }
+
+    /* ===== Aside: formulario simulado ===== */
+    .aside-publicar {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      height: fit-content;
+    }
+
+    .aside-publicar h3 {
+      color: #b30000;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .aside-publicar label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: block;
+      margin-top: 12px;
+      color: #b30000;
+    }
+
+    .aside-publicar input,
+    .aside-publicar textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .aside-publicar textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .aside-publicar button {
+      margin-top: 15px;
+      width: 100%;
+      background: #b30000;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .aside-publicar button:hover {
+      background: #8a0000;
+    }
+
+    /* ===== Responsivo ===== */
+    @media (max-width: 992px) {
+      .blog-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">ChinaCommerce</div>
+      <ul class="navbar-links">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="explorar.html" class="nav-link">Explorar China</a></li>
+
+        <li class="dropdown">
+          <a href="comercio.html" class="nav-link">Comercio Exterior ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="aduanas.html">Aduanas</a></li>
+            <li><a href="beneficios.html">Beneficios</a></li>
+            <li><a href="intermediarios.html">Intermediarios</a></li>
+            <li><a href="contrato-compraventa.html">Contrato Compraventa</a></li>
+            <li><a href="estrategia.html">Estrategia Exportadora</a></li>
+            <li><a href="proceso.html">El Proceso de Exportar</a></li>
+            <li><a href="pagos.html">Formas de Pago Internacionales</a></li>
+            <li><a href="transporte.html">Transporte Internacional</a></li>
+            <li><a href="seguro.html">Seguro de Transporte Internacional</a></li>
+          </ul>
+        </li>
+
+        <li><a href="consumidor.html" class="nav-link">El Consumidor Chino</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="login.html" class="nav-link">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Layout principal -->
+  <div class="blog-layout">
+
+    <!-- Columna izquierda: Comentarios -->
+    <div class="blog-container">
+      <h1>Blog — Consultas de la Comunidad</h1>
+
+      <!-- Comentario 1 -->
+      <div class="comment">
+        <div class="comment-header">
+          <span class="comment-user">María Fuentes</span>
+          <span class="comment-date">Publicado el 25 de noviembre 2025</span>
+        </div>
+        <p class="comment-text">
+          ¿Qué productos chilenos están teniendo más salida en China últimamente? Estoy pensando en iniciar un emprendimiento y quiero saber qué tiene más demanda.
+        </p>
+        <button class="reply-button">Responder</button>
+      </div>
+
+      <!-- Comentario 2 -->
+      <div class="comment">
+        <div class="comment-header">
+          <span class="comment-user">Tomás Villalobos</span>
+          <span class="comment-date">Publicado el 21 de noviembre 2025</span>
+        </div>
+        <p class="comment-text">
+          He escuchado mucho sobre el “guanxi”. ¿Es tan importante en los negocios con China? ¿Cómo se empieza a construir una buena relación comercial?
+        </p>
+        <button class="reply-button">Responder</button>
+      </div>
+
+      <!-- Comentario 3 -->
+      <div class="comment">
+        <div class="comment-header">
+          <span class="comment-user">Daniela Torres</span>
+          <span class="comment-date">Publicado el 19 de noviembre 2025</span>
+        </div>
+        <p class="comment-text">
+          Si quiero exportar un producto desde Chile, ¿qué es lo primero que debería averiguar? Me gustaría tener una idea de por dónde comenzar.
+        </p>
+        <button class="reply-button">Responder</button>
+      </div>
+
+      <!-- Comentario 4 -->
+      <div class="comment">
+        <div class="comment-header">
+          <span class="comment-user">Ricardo Alarcón</span>
+          <span class="comment-date">Publicado el 15 de noviembre 2025</span>
+        </div>
+        <p class="comment-text">
+          ¿Es complicado enviar productos pequeños a China? ¿O solo conviene exportar cosas grandes como fruta o vino?
+        </p>
+        <button class="reply-button">Responder</button>
+      </div>
+
+      <!-- Comentario 5 -->
+      <div class="comment">
+        <div class="comment-header">
+          <span class="comment-user">Fernanda Moya</span>
+          <span class="comment-date">Publicado el 9 de noviembre 2025</span>
+        </div>
+        <p class="comment-text">
+          Me interesa vender en plataformas chinas como Taobao o JD. ¿Algún chileno ya lo ha hecho? ¿Qué tan difícil es empezar?
+        </p>
+        <button class="reply-button">Responder</button>
+      </div>
+
+    </div>
+
+    <!-- Columna derecha: Publicar comentario -->
+    <aside class="aside-publicar">
+      <h3>Publicar un comentario</h3>
+
+      <label for="comentario">Comentario:</label>
+      <textarea id="comentario" placeholder="Escribe tu consulta o aporte..."></textarea>
+
+      <label for="archivo">Subir imagen (opcional):</label>
+      <input type="file" id="archivo">
+
+      <button>Publicar</button>
+    </aside>
+
+  </div>
+
+</body>
+</html>
